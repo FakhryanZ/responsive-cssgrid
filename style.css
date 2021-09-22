@@ -1,0 +1,232 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* style */
+@media(max-width:1140px){
+    
+}
+img {
+    width: 100%;
+}
+
+body {
+    background-color: #ddd;
+    font-size: 18px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    margin: 50px;
+}
+
+/* container */
+.container{
+    display: grid;
+    gap: 10px;
+}
+
+/* header */
+.header {
+    display: grid;
+    grid-template-areas: 
+    'hero hero feature-1'
+    'hero hero feature-2'
+    ;
+}
+
+.hero {
+    grid-area: hero;
+    min-height: 300px;
+    padding: 50px;
+    background-image: url(https://images.unsplash.com/photo-1454165205744-3b78555e5572);
+    background-size: cover;
+    background-position: center;
+}
+
+.hero > *{
+    display: none;
+}
+
+.features {
+    background-color: black;
+    color: white;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.feature-1 {
+    grid-area: feature-1;
+}
+
+.feature-2 {
+    grid-area: feature-2;
+}
+
+.features .price {
+    font-size: 3em;
+    font-weight: 200;
+    color: #eee;
+}
+
+/* navigation */
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    order: -1;
+}
+
+.menu .brand {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: bold;
+}
+
+.menu ul {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 5px;
+}
+
+.menu a {
+    display: block;
+    text-decoration: none;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 7px;
+    text-transform: uppercase;
+    font-size: .9em;
+}
+
+/* services */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.service {
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.service .icon {
+    font-size: 3em;
+}
+
+.service h3{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.service p {
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: 0.8em;
+}
+
+/* portfolio */
+.portfolio {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.portfolio h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    grid-column: 1/-1;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+
+/* responsive breakpoint */
+@media(max-width:1024px){
+    .menu {
+        order: inherit;
+        grid-template-columns: 1fr;
+    }
+
+    .menu .brand{
+        display: none;
+    }
+
+    .hero > * {
+        display: block;
+        background-color: #000;
+        color: #fff;
+        padding: 7px;
+        margin-bottom: 5px;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .hero .heading {
+        font-size: 2.5em;
+    }
+
+    .hero .sub-heading{
+        font-size: 1.5em;
+    }
+}
+
